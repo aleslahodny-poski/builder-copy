@@ -24,7 +24,7 @@ body {
   min-height: 100vh;
   background: hsl(var(--background));
   color: hsl(var(--foreground));
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Questrial', Questrial, Arial, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

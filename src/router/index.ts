@@ -17,35 +17,35 @@ const router = createRouter({
       component: HomePage,
     },
     {
-      path: '/projects',
+      path: '/projekty',
       name: 'projects',
       component: ProjectsPage,
     },
     {
-      path: '/projects/:slug',
+      path: '/projekty/:slug',
       name: 'project-detail',
       component: ProjectDetailPage,
     },
     {
-      path: '/for-developers',
+      path: '/pro-developery',
       name: 'for-developers',
       component: InfoPage,
       props: {
-        eyebrow: 'For Developers',
-        title: 'Competition rules and submission guidance',
+        eyebrow: 'Pro developery',
+        title: 'Pravidla soutěže a pokyny k přihlašování',
         description:
-          'This page is ready for the full rules, requirements, and submission process. The shared layout and routing are already in place so the content can be expanded next without changing the overall site structure.',
+          'Tato stránka je připravena na kompletní pravidla po zveřejnění ročníku, požadavky a proces přihlašování. Sdílené rozvržení je již připraveno, takže obsah lze postupně rozšiřovat.',
       },
     },
     {
-      path: '/for-partners',
+      path: '/pro-partnery',
       name: 'for-partners',
       component: InfoPage,
       props: {
-        eyebrow: 'For Partners',
-        title: 'Partnership packages and media opportunities',
+        eyebrow: 'Pro partnery',
+        title: 'Partnerské balíčky a mediální příležitosti',
         description:
-          'This placeholder keeps the navigation complete and gives the page a production-ready shell. We can turn it into a full partner page with packages, contacts, and media assets in the next pass.',
+          'Tento zástupný text udržuje navigaci kompletní. V dalším kroku z ní pod záštitami asociací můžeme vytvořit plnohodnotnou partnerskou stránku.',
       },
     },
   ],

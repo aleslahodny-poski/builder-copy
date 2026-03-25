@@ -58,7 +58,7 @@ const districtClass = (name: string) =>
     : 'fill-paper text-ink stroke-line hover:fill-muted'
 
 const selectRegion = (name: string) => {
-  emit('update:region', props.selectedRegion === name ? 'All regions' : name)
+  emit('update:region', props.selectedRegion === name ? 'Všechny regiony' : name)
   emit('update:district', '')
 }
 
@@ -72,15 +72,15 @@ const selectDistrict = (name: string) => {
     <div class="rounded-card border border-line bg-paper p-5 md:p-6">
       <div class="flex items-start justify-between gap-4 border-b border-line pb-5">
         <div>
-          <p class="text-xs uppercase tracking-[0.3em] text-ink/45">Czech Republic</p>
-          <p class="mt-2 text-sm leading-6 text-ink/65">Click a region to filter the shortlist.</p>
+          <p class="text-xs uppercase tracking-[0.3em] text-ink/45">Česká republika</p>
+          <p class="mt-2 text-sm leading-6 text-ink/65">Pro filtrování užšího výběru klikněte na region.</p>
         </div>
         <button
           type="button"
           class="rounded-soft border border-line px-4 py-2 text-xs uppercase tracking-[0.18em] text-ink transition hover:border-ink"
-          @click="selectRegion('All regions')"
+          @click="selectRegion('Všechny regiony')"
         >
-          Reset
+          Resetovat
         </button>
       </div>
 
@@ -111,9 +111,9 @@ const selectDistrict = (name: string) => {
 
     <div class="rounded-card border border-line bg-paper p-5 md:p-6">
       <div class="border-b border-line pb-5">
-        <p class="text-xs uppercase tracking-[0.3em] text-ink/45">Prague districts</p>
+        <p class="text-xs uppercase tracking-[0.3em] text-ink/45">Pražské části</p>
         <p class="mt-2 text-sm leading-6 text-ink/65">
-          Detailed district filtering appears when Praha is active.
+          Zde se zobrazí detailní filtrování při výběru regionu Praha.
         </p>
       </div>
 
@@ -144,7 +144,7 @@ const selectDistrict = (name: string) => {
       </div>
 
       <div v-else class="mt-6 rounded-soft border border-dashed border-line px-5 py-8 text-sm leading-7 text-ink/60">
-        Select <span class="font-medium text-ink">Praha</span> on the main map to refine the shortlist by district.
+        Pro přesnější výběr lokality vyberte na hlavní mapě region <span class="font-medium text-ink">Praha</span>.
       </div>
     </div>
   </div>

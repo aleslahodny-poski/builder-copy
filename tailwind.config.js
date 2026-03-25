@@ -19,7 +19,18 @@ export default {
         panel: '0 30px 80px -40px hsl(var(--shadow) / 0.28)',
       },
       fontFamily: {
-        sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+        sans: ['Questrial', 'sans-serif'],
+      },
+      fontWeight: {
+        thin: '100',
+        extralight: '200',
+        light: '300',
+        normal: '400',
+        medium: '500',
+        semibold: '600',
+        bold: '700',
+        extrabold: '800',
+        black: '900',
       },
       letterSpacing: {
         display: '-0.045em',

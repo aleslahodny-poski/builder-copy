@@ -24,54 +24,88 @@ watch(
 </script>
 
 <template>
-  <header class="fixed inset-x-0 top-0 z-50 border-b border-line/80 bg-canvas/95 backdrop-blur">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8 lg:px-10">
-      <RouterLink to="/" class="text-sm font-semibold tracking-[0.34em] text-ink transition hover:opacity-70">
-        [LOGO]
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-line/80 bg-canvas/90 backdrop-blur-md">
+    <div class="mx-auto flex max-w-[1600px] items-center justify-between px-5 py-4 md:px-8 lg:px-10">
+      <RouterLink to="/" class="group flex items-center gap-3 transition-opacity duration-300 hover:opacity-80">
+        <div class="flex h-8 w-8 items-center justify-center rounded-full bg-ink text-paper">
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>
+        </div>
+        <span class="text-sm font-bold uppercase tracking-[0.34em] text-ink">Projekt Roku</span>
       </RouterLink>
 
-      <nav class="hidden items-center gap-8 md:flex">
+      <nav class="hidden items-center gap-10 md:flex">
         <RouterLink
           v-for="item in navigationLinks"
           :key="item.href"
           :to="item.href"
-          class="text-sm tracking-[0.14em] text-ink/68 transition hover:text-ink"
-          :class="isActive(item.href) ? 'text-ink' : ''"
+          class="group relative py-1 text-xs uppercase tracking-[0.18em] transition-colors duration-300"
+          :class="isActive(item.href) ? 'text-ink font-semibold' : 'text-ink/60 hover:text-ink'"
         >
           {{ item.label }}
+          <span 
+            class="absolute -bottom-1 left-0 h-[2px] bg-ink transition-all duration-300 ease-out"
+            :class="isActive(item.href) ? 'w-full' : 'w-0 group-hover:w-full'"
+          ></span>
         </RouterLink>
-        <RouterLink to="/projects" class="rounded-soft border border-ink bg-ink px-5 py-2 text-sm tracking-[0.14em] text-paper transition hover:bg-paper hover:text-ink">
-          Hlasujte
+        <RouterLink 
+          to="/projekty" 
+          class="rounded-full border border-ink bg-ink px-7 py-2.5 text-xs uppercase tracking-[0.16em] text-paper shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-paper hover:text-ink hover:shadow-md"
+        >
+          Hlasovat
         </RouterLink>
       </nav>
 
       <button
         type="button"
-        class="rounded-soft border border-line px-4 py-2 text-xs uppercase tracking-[0.18em] text-ink md:hidden"
+        class="group relative flex h-10 w-10 flex-col items-center justify-center gap-[4px] rounded-full border border-line bg-canvas transition-colors duration-300 hover:bg-muted md:hidden"
         @click="mobileMenuOpen = !mobileMenuOpen"
+        aria-label="Toggle menu"
       >
-        {{ mobileMenuOpen ? 'Close' : 'Menu' }}
+        <span 
+          class="h-[1.5px] w-[18px] bg-ink transition-all duration-300"
+          :class="mobileMenuOpen ? 'translate-y-[5.5px] rotate-45' : ''"
+        ></span>
+        <span 
+          class="h-[1.5px] w-[18px] bg-ink transition-all duration-300"
+          :class="mobileMenuOpen ? 'opacity-0' : ''"
+        ></span>
+        <span 
+          class="h-[1.5px] w-[18px] bg-ink transition-all duration-300"
+          :class="mobileMenuOpen ? '-translate-y-[5.5px] -rotate-45' : ''"
+        ></span>
       </button>
     </div>
 
-    <div v-if="mobileMenuOpen" class="border-t border-line bg-canvas px-5 py-4 md:hidden">
-      <nav class="flex flex-col gap-3">
-        <RouterLink
-          v-for="item in navigationLinks"
-          :key="item.href"
-          :to="item.href"
-          class="rounded-soft border px-4 py-3 text-sm tracking-[0.14em]"
-          :class="isActive(item.href) ? 'border-ink bg-ink text-paper' : 'border-line text-ink'"
-        >
-          {{ item.label }}
-        </RouterLink>
-        <RouterLink
-          to="/projects"
-          class="rounded-soft border border-ink bg-ink px-4 py-3 text-sm tracking-[0.14em] text-paper"
-        >
-          Hlasujte
-        </RouterLink>
-      </nav>
-    </div>
+    <transition
+      enter-active-class="transition duration-300 ease-out"
+      enter-from-class="-translate-y-4 opacity-0"
+      enter-to-class="translate-y-0 opacity-100"
+      leave-active-class="transition duration-200 ease-in"
+      leave-from-class="translate-y-0 opacity-100"
+      leave-to-class="-translate-y-4 opacity-0"
+    >
+      <div v-if="mobileMenuOpen" class="absolute inset-x-0 top-full border-b border-line bg-canvas px-5 py-6 shadow-lg md:hidden">
+        <nav class="flex flex-col gap-4">
+          <RouterLink
+            v-for="item in navigationLinks"
+            :key="item.href"
+            :to="item.href"
+            class="flex items-center justify-between rounded-card border px-5 py-4 text-xs uppercase tracking-[0.14em] transition-all duration-300"
+            :class="isActive(item.href) ? 'border-ink bg-ink text-paper shadow-md' : 'border-line text-ink hover:border-ink/40 hover:bg-muted'"
+          >
+            {{ item.label }}
+            <span v-if="isActive(item.href)" class="h-1.5 w-1.5 rounded-full bg-paper"></span>
+          </RouterLink>
+          <RouterLink
+            to="/projekty"
+            class="mt-2 flex justify-center rounded-card border border-ink bg-ink px-6 py-4 text-xs uppercase tracking-[0.14em] text-paper shadow-md transition-opacity active:opacity-80"
+          >
+            Hlasovat
+          </RouterLink>
+        </nav>
+      </div>
+    </transition>
   </header>
 </template>

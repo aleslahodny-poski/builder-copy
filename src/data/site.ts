@@ -24,168 +24,128 @@ export interface Project {
 }
 
 export const navigationLinks = [
-  { label: 'Projects', href: '/projects' },
-  { label: 'For Developers', href: '/for-developers' },
-  { label: 'For Partners', href: '/for-partners' },
+  { label: 'Nominované projekty', href: '/projekty' },
+  { label: 'Pro developery', href: '/pro-developery' },
+  { label: 'Pro partnery', href: '/pro-partnery' },
 ]
 
 export const timelineItems: TimelineItem[] = [
   {
-    date: '31 March 2026',
-    title: 'Registration deadline',
-    description: 'Developers submit completed and upcoming projects for the 2026 edition.',
+    date: '1. února 2026',
+    title: 'Zahájení registrací',
+    description: 'Developeři mohou začít přihlašovat své rezidenční projekty do aktuálního ročníku soutěže.',
   },
   {
-    date: '1 May – 30 November 2026',
-    title: 'Public voting',
-    description: 'The public explores shortlisted developments and confirms votes by email.',
+    date: '31. října 2026',
+    title: 'Uzávěrka přihlášek',
+    description: 'Nejzazší termín pro přihlášení projektů, uhrazení registračních poplatků a dodání veškerých podkladů.',
   },
   {
-    date: 'January 2027',
-    title: 'Award ceremony',
-    description: 'The competition culminates in a live announcement of the winning projects.',
+    date: '31. prosince 2026',
+    title: 'Konec hlasování veřejnosti',
+    description: 'Ukončení online hlasování veřejnosti pro nominované projekty a následné sečtení všech ověřených hlasů.',
+  },
+  {
+    date: 'Leden 2027',
+    title: 'Slavnostní vyhlášení',
+    description: 'Vyhlášení výsledků a předání diplomů vítězům ve všech kategoriích v rámci slavnostního galavečera.',
   },
 ]
 
 export const organizers: Organizer[] = [
   {
-    name: 'Klára Novotná',
-    role: 'Programme Director',
-    image: 'https://images.pexels.com/photos/6615222/pexels-photo-6615222.jpeg',
+    name: 'Mgr. Dana Hradecká',
+    role: 'Organizátorka soutěže',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80',
   },
   {
-    name: 'Marek Dvořák',
-    role: 'Competition Curator',
-    image: 'https://images.pexels.com/photos/6474449/pexels-photo-6474449.jpeg',
+    name: 'Jan Hradecký',
+    role: 'Organizátor soutěže',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80',
   },
 ]
 
 export const projects: Project[] = [
   {
     slug: 'vltava-residence',
-    name: 'Vltava Residence',
+    name: 'Rezidence Vltava',
     developer: 'Atria Development',
     region: 'Praha',
     district: 'Praha 7',
-    image: 'https://images.pexels.com/photos/3872487/pexels-photo-3872487.jpeg',
-    summary: 'A refined riverfront housing project with generous terraces and public-facing ground floor spaces.',
+    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80',
+    summary: 'Promyšlený projekt bydlení na nábřeží s velkorysými terasami a veřejnosti přístupným přízemím.',
     description:
-      'Vltava Residence rethinks a former industrial parcel into a dense but calm urban block. The proposal balances apartments, shared amenities, and a landscaped inner court, while the ground floor opens the development to the surrounding neighbourhood.',
+      'Rezidence Vltava transformuje bývalý průmyslový pozemek na hustý, ale klidný městský blok. Návrh vyvažuje byty, sdílené vybavení a upravený vnitřní dvůr, zatímco přízemí otevírá zástavbu okolní čtvrti.',
     website: 'https://example.com/vltava-residence',
     featured: true,
   },
   {
     slug: 'brno-yard',
-    name: 'Brno Yard',
+    name: 'Brněnský Dvůr',
     developer: 'Urban Nest',
     region: 'Jihomoravský',
-    image: 'https://images.pexels.com/photos/4393850/pexels-photo-4393850.jpeg',
-    summary: 'A compact mixed-use scheme that pairs rental living with adaptable workspaces.',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80',
+    summary: 'Kompaktní smíšený projekt, který spojuje nájemní bydlení s přizpůsobitelnými pracovními prostory.',
     description:
-      'Brno Yard combines small-footprint homes, workshops, and retail units in a monochrome architectural language. The building is designed to age well, with robust materials and flexible layouts for changing uses.',
+      'Brněnský Dvůr kombinuje malometrážní byty, dílny a maloobchodní jednotky v monochromatickém architektonickém jazyce. Budova je navržena tak, aby dobře stárla, s robustními materiály a flexibilními dispozicemi pro měnící se využití.',
     website: 'https://example.com/brno-yard',
     featured: true,
   },
   {
     slug: 'central-lofts',
-    name: 'Central Lofts',
+    name: 'Centrální Lofty',
     developer: 'Crestline Group',
     region: 'Středočeský',
-    image: 'https://images.pexels.com/photos/2468056/pexels-photo-2468056.jpeg',
-    summary: 'Warehouse conversion with loft housing, studios, and a new civic passage.',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80',
+    summary: 'Přestavba skladu na loftové bydlení, ateliéry a novou občanskou pasáž.',
     description:
-      'Central Lofts preserves the structure of a former warehouse hall and introduces a generous public passage through the site. The proposal focuses on daylight, walkability, and a simple palette that foregrounds proportion and craft.',
+      'Centrální Lofty zachovávají strukturu bývalé skladové haly a zavádějí na místo velkorysou veřejnou pasáž. Návrh se zaměřuje na denní světlo, pěší dostupnost a jednoduchou paletu, která staví do popředí proporce a řemeslo.',
     website: 'https://example.com/central-lofts',
     featured: true,
   },
   {
     slug: 'harbor-quarter',
-    name: 'Harbor Quarter',
+    name: 'Přístavní Čtvrť',
     developer: 'Northline Estates',
     region: 'Moravskoslezský',
-    image: 'https://images.pexels.com/photos/3872487/pexels-photo-3872487.jpeg',
-    summary: 'A phased neighbourhood plan with housing, services, and a public waterfront edge.',
+    image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80',
+    summary: 'Fázovaný plán rozvoje čtvrti s bydlením, službami a nábřežní promenádou.',
     description:
-      'Harbor Quarter turns a post-industrial waterfront into a permeable district with housing, childcare, and a sequence of public courtyards. The concept emphasises durability, reuse, and a strong pedestrian experience.',
+      'Přístavní Čtvrť mění postindustriální nábřeží na propustnou čtvrť s bydlením, školkou a sekvencí veřejných nádvoří. Koncept klade důraz na trvanlivost, opětovné využití a silný zážitek pro chodce.',
     website: 'https://example.com/harbor-quarter',
     featured: true,
   },
   {
     slug: 'atelier-gardens',
-    name: 'Atelier Gardens',
+    name: 'Ateliérové Zahrady',
     developer: 'Forma Living',
     region: 'Jihočeský',
-    image: 'https://images.pexels.com/photos/4393850/pexels-photo-4393850.jpeg',
-    summary: 'A low-rise residential ensemble built around shared gardens and atelier spaces.',
+    image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80',
+    summary: 'Nízkopodlažní obytný soubor postavený kolem sdílených zahrad a ateliérových prostor.',
     description:
-      'Atelier Gardens is conceived as a quiet cluster of apartment houses arranged around a central garden. Shared atelier rooms and flexible community spaces make the project usable well beyond standard housing hours.',
+      'Ateliérové Zahrady jsou koncipovány jako klidný shluk bytových domů uspořádaných kolem ústřední zahrady. Sdílené ateliéry a flexibilní komunitní prostory dělají projekt využitelným i nad rámec běžných hodin bydlení.',
     website: 'https://example.com/atelier-gardens',
     featured: true,
   },
   {
     slug: 'embassy-court',
-    name: 'Embassy Court',
+    name: 'Rezidence Velvyslanectví',
     developer: 'Metropolitan Works',
     region: 'Praha',
     district: 'Praha 1',
-    image: 'https://images.pexels.com/photos/2468056/pexels-photo-2468056.jpeg',
-    summary: 'A restoration-led hospitality and housing project in the historic centre.',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80',
+    summary: 'Projekt kombinující pohostinství a bydlení v historickém centru.',
     description:
-      'Embassy Court preserves a heritage shell while introducing contemporary living and hospitality spaces. The design uses understated materials, controlled openings, and careful detailing to let the original structure lead.',
+      'Rezidence Velvyslanectví zachovává historický plášť a zároveň zavádí do prostoru moderní bydlení a služby. Návrh používá nenápadné materiály a pečlivé detaily, aby vynikla původní struktura.',
     website: 'https://example.com/embassy-court',
     featured: true,
-  },
-  {
-    slug: 'district-eighteen',
-    name: 'District Eighteen',
-    developer: 'Civic Habitat',
-    region: 'Praha',
-    district: 'Praha 8',
-    image: 'https://images.pexels.com/photos/3872487/pexels-photo-3872487.jpeg',
-    summary: 'Transit-oriented housing with co-working and a new local square.',
-    description:
-      'District Eighteen places a fine-grained block structure above active ground-floor uses, establishing a strong neighbourhood centre near public transport. The project is calibrated for density, access, and long-term flexibility.',
-    website: 'https://example.com/district-eighteen',
-  },
-  {
-    slug: 'northern-terraces',
-    name: 'Northern Terraces',
-    developer: 'Scale Studio',
-    region: 'Liberecký',
-    image: 'https://images.pexels.com/photos/4393850/pexels-photo-4393850.jpeg',
-    summary: 'Stepped housing on a hillside site with shared winter gardens.',
-    description:
-      'Northern Terraces adapts to a steep site through stepped floor plates and protected shared gardens. The building massing creates views, sunlight, and a precise relation between private and collective space.',
-    website: 'https://example.com/northern-terraces',
-  },
-  {
-    slug: 'stone-line-campus',
-    name: 'Stone Line Campus',
-    developer: 'Vertex Properties',
-    region: 'Plzeňský',
-    image: 'https://images.pexels.com/photos/2468056/pexels-photo-2468056.jpeg',
-    summary: 'A business and residential campus stitched together by new public routes.',
-    description:
-      'Stone Line Campus introduces a crisp urban order to a fragmented site, combining apartments, offices, and retail in a walkable composition. Material restraint and strong proportions define the identity of the project.',
-    website: 'https://example.com/stone-line-campus',
-  },
-  {
-    slug: 'park-slab',
-    name: 'Park Slab',
-    developer: 'Contour Collective',
-    region: 'Královéhradecký',
-    image: 'https://images.pexels.com/photos/3872487/pexels-photo-3872487.jpeg',
-    summary: 'An elongated residential block framed by a new public park.',
-    description:
-      'Park Slab turns a mono-functional edge into a mixed residential address with a strong park frontage. Circulation, balconies, and common spaces are treated as part of the public character of the building.',
-    website: 'https://example.com/park-slab',
   },
 ]
 
 export const featuredProjects = projects.filter((project) => project.featured)
 
 export const contactDetails = {
-  address: ['Competition Office', 'Na Příkopě 12', '110 00 Praha 1'],
-  person: 'Klára Novotná',
-  email: 'hello@competition-office.cz',
+  address: ['Kancelář soutěže', 'Na Příkopě 12', '110 00 Praha 1'],
+  person: 'Mgr. Dana Hradecká',
+  email: 'hradecka@projektroku.cz',
 }
