@@ -1,0 +1,26 @@
+@import './base.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-canvas text-ink;
+  }
+  section {
+    @apply scroll-mt-32;
+  }
+}
+
+@layer components {
+  .section-frame {
+    @apply rounded-shell border border-line bg-paper;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
