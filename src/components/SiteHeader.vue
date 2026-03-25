@@ -40,8 +40,8 @@ watch(
           v-for="item in navigationLinks"
           :key="item.href"
           :to="item.href"
-          class="group relative py-1 text-xs uppercase tracking-[0.18em] transition-colors duration-300"
-          :class="isActive(item.href) ? 'text-ink font-semibold' : 'text-ink/60 hover:text-ink'"
+          class="group relative py-1 text-xs uppercase font-bold tracking-[0.18em] transition-colors duration-300"
+          :class="isActive(item.href) ? 'text-ink' : 'text-ink/60 hover:text-ink'"
         >
           {{ item.label }}
           <span 
@@ -51,7 +51,7 @@ watch(
         </RouterLink>
         <RouterLink 
           to="/projekty" 
-          class="rounded-full border border-ink bg-ink px-7 py-2.5 text-xs uppercase tracking-[0.16em] text-paper shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-paper hover:text-ink hover:shadow-md"
+          class="rounded-full border border-ink bg-ink px-7 py-2.5 text-xs uppercase font-bold tracking-[0.16em] text-paper shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-paper hover:text-ink hover:shadow-md"
         >
           Hlasovat
         </RouterLink>
@@ -92,7 +92,7 @@ watch(
             v-for="item in navigationLinks"
             :key="item.href"
             :to="item.href"
-            class="flex items-center justify-between rounded-card border px-5 py-4 text-xs uppercase tracking-[0.14em] transition-all duration-300"
+            class="flex items-center justify-between rounded-card border font-bold px-5 py-4 text-xs uppercase tracking-[0.14em] transition-all duration-300"
             :class="isActive(item.href) ? 'border-ink bg-ink text-paper shadow-md' : 'border-line text-ink hover:border-ink/40 hover:bg-muted'"
           >
             {{ item.label }}
@@ -100,7 +100,7 @@ watch(
           </RouterLink>
           <RouterLink
             to="/projekty"
-            class="mt-2 flex justify-center rounded-card border border-ink bg-ink px-6 py-4 text-xs uppercase tracking-[0.14em] text-paper shadow-md transition-opacity active:opacity-80"
+            class="mt-2 flex justify-center rounded-card border border-ink bg-ink px-6 py-4 text-xs uppercase tracking-[0.14em] text-paper shadow-md transition-opacity active:opacity-80 font-bold"
           >
             Hlasovat
           </RouterLink>

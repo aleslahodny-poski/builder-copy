@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import HomePage from '@/pages/HomePage.vue'
-import InfoPage from '@/pages/InfoPage.vue'
+import ForDevelopersPage from '@/pages/ForDevelopersPage.vue'
+import ForPartnersPage from '@/pages/ForPartnersPage.vue'
 import ProjectDetailPage from '@/pages/ProjectDetailPage.vue'
 import ProjectsPage from '@/pages/ProjectsPage.vue'
 
@@ -29,24 +30,12 @@ const router = createRouter({
     {
       path: '/pro-developery',
       name: 'for-developers',
-      component: InfoPage,
-      props: {
-        eyebrow: 'Pro developery',
-        title: 'Pravidla soutěže a pokyny k přihlašování',
-        description:
-          'Tato stránka je připravena na kompletní pravidla po zveřejnění ročníku, požadavky a proces přihlašování. Sdílené rozvržení je již připraveno, takže obsah lze postupně rozšiřovat.',
-      },
+      component: ForDevelopersPage,
     },
     {
       path: '/pro-partnery',
       name: 'for-partners',
-      component: InfoPage,
-      props: {
-        eyebrow: 'Pro partnery',
-        title: 'Partnerské balíčky a mediální příležitosti',
-        description:
-          'Tento zástupný text udržuje navigaci kompletní. V dalším kroku z ní pod záštitami asociací můžeme vytvořit plnohodnotnou partnerskou stránku.',
-      },
+      component: ForPartnersPage,
     },
   ],
 })

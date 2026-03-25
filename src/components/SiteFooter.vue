@@ -22,7 +22,7 @@ import { contactDetails } from '@/data/site'
       </div>
 
       <div class="space-y-4">
-        <p class="text-xs uppercase tracking-[0.3em] text-ink/55">Kontakt</p>
+        <p class="text-xs uppercase tracking-[0.3em] text-ink/55 font-bold">Kontakt</p>
         <div class="space-y-2 text-sm leading-7 text-ink/75">
           <p v-for="line in contactDetails.address" :key="line">{{ line }}</p>
           <p>Kontaktní osoba: {{ contactDetails.person }}</p>
@@ -33,7 +33,7 @@ import { contactDetails } from '@/data/site'
       </div>
 
       <div class="space-y-4">
-        <p class="text-xs uppercase tracking-[0.3em] text-ink/55">Odkazy</p>
+        <p class="text-xs uppercase tracking-[0.3em] text-ink/55 font-bold">Odkazy</p>
         <div class="flex flex-col gap-3 text-sm text-ink/75">
           <RouterLink to="/projekty" class="transition hover:text-ink">Nominované projekty</RouterLink>
           <RouterLink to="/pro-developery" class="transition hover:text-ink">Pro developery</RouterLink>
