@@ -1,5 +1,10 @@
 import danaImage from '@/assets/dana-hradecka.png'
 import reneImage from '@/assets/rene-hradecky.png'
+import adresaLogo from '@/assets/logos/adresa.png'
+import bonafideLogo from '@/assets/logos/bonafide.png'
+import czechWorkspaceLogo from '@/assets/logos/czech-workspace.png'
+import reLogo from '@/assets/logos/re.png'
+import tvizeLogo from '@/assets/logos/tvize.png'
 
 export interface TimelineItem {
   date: string
@@ -324,8 +329,110 @@ export const projects: Project[] = [
 
 export const featuredProjects = projects.filter((project) => project.featured)
 
+// Skutečné údaje z projektroku.cz. Původní adresa "Na Příkopě 12" byla vymyšlená.
 export const contactDetails = {
-  address: ['Kancelář soutěže', 'Na Příkopě 12', '110 00 Praha 1'],
+  address: ['Port7, budova E1', 'Partyzánská 23', 'Praha 7 Holešovice'],
   person: 'Mgr. Dana Hradecká',
+  phone: '+420 605 292 801',
   email: 'hradecka@projektroku.cz',
+  ic: '883 25 067',
 }
+
+export const eventTerm = {
+  label: 'Termín konání akce',
+  title: 'Slavnostní vyhlášení',
+  value: 'leden 2027',
+  note: 'Vyhlášení výsledků a předání ocenění ve všech kategoriích v rámci galavečera.',
+}
+
+export interface NewsItem {
+  date: string
+  title: string
+  perex: string
+  href: string
+}
+
+// Tři nejnovější aktuality z projektroku.cz/aktuality/.
+export const newsItems: NewsItem[] = [
+  {
+    date: '1. 2. 2026',
+    title: 'Registrace projektů do ročníku 2026 právě zahájena',
+    perex:
+      'Od 1. února je otevřena registrace rezidenčních projektů do osmnáctého ročníku soutěže.',
+    href: 'https://www.projektroku.cz/aktuality/registrace-projektu-do-rocniku-2026-prave-zahajena-17/',
+  },
+  {
+    date: '25. 1. 2026',
+    title: 'Realitní projekt roku 2025 již zná své vítěze',
+    perex: '17. ročník soutěže Realitní projekt roku přinesl rekordní účast.',
+    href: 'https://www.projektroku.cz/aktuality/realitni-projekt-roku-2025-jiz-zna-sve-viteze-16/',
+  },
+  {
+    date: '13. 12. 2025',
+    title: 'Očekávané finále – vyhlášení vítězů za rok 2025 se uskuteční 22. ledna 2026',
+    perex:
+      'Vyhlášení vítězů sedmnáctého ročníku soutěže Realitní projekt roku za rok 2025.',
+    href: 'https://www.projektroku.cz/aktuality/ocekavane-finale-vyhlaseni-vitezu-za-rok-2025-se-uskutecni-22-ledna-2026-15/',
+  },
+]
+
+export interface JuryChair {
+  name: string
+  role: string
+  category: 'jury' | 'architects'
+  bio: string
+  /** Zástupný záznam — klient zatím jména poroty nedodal. */
+  placeholder?: boolean
+}
+
+// ZÁSTUPNÁ DATA. Na projektroku.cz nejsou jména poroty nikde zveřejněná.
+// Až klient dodá jména a fotky, stačí přepsat tento seznam.
+// Cena veřejnosti záměrně chybí — je to hlasování veřejnosti, porotu nemá.
+export const juryChairs: JuryChair[] = [
+  {
+    name: 'Jméno Příjmení',
+    role: 'Předseda odborné poroty',
+    category: 'jury',
+    bio: 'Odborná porota hodnotí architektonickou kvalitu, koncepci a přínos projektu pro lokalitu.',
+    placeholder: true,
+  },
+  {
+    name: 'Jméno Příjmení',
+    role: 'Předseda poroty architektů',
+    category: 'architects',
+    bio: 'Porota architektů posuzuje projekty z pohledu urbanismu, materiálového řešení a detailu.',
+    placeholder: true,
+  },
+]
+
+export interface PartnerTier {
+  tier: string
+  partners: { name: string; logo?: string }[]
+}
+
+// Hierarchie partnerů z projektroku.cz. Loga zatím nemáme jako soubory,
+// takže se vykreslují jako monochromní čtvercové dlaždice s názvem.
+export const partnerTiers: PartnerTier[] = [
+  { tier: 'Zlatý partner', partners: [{ name: 'Adresa', logo: adresaLogo }] },
+  {
+    tier: 'Stříbrný partner',
+    partners: [
+      { name: 'Developers Club' },
+      { name: 'Města budoucnosti' },
+      { name: 'Upvest' },
+      { name: 'Newton University' },
+    ],
+  },
+  { tier: 'Bronzový partner', partners: [{ name: 'Ronda Invest' }] },
+  { tier: 'Mediální partner', partners: [{ name: 'Reality Idnes' }] },
+]
+
+// Loga mediální skupiny do zápatí. Vyříznuto ze screenshotu zápatí adresa.cz —
+// před ostrým nasazením nahradit originály od klienta.
+export const groupLogos = [
+  { name: 'bonafide', src: bonafideLogo, href: 'https://www.bonafide.cz/', width: 'w-32' },
+  { name: 'RE', src: reLogo, href: null, width: 'w-8' },
+  { name: 'adresa', src: adresaLogo, href: 'https://adresa.cz', width: 'w-24' },
+  { name: 'tvize', src: tvizeLogo, href: 'https://tvize.cz', width: 'w-20' },
+  { name: 'Czech Workspace', src: czechWorkspaceLogo, href: null, width: 'w-28' },
+]
