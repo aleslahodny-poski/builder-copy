@@ -30,33 +30,30 @@ const currentFilterLabel = computed(() => {
 <template>
   <div class="min-h-screen bg-paper pb-24 -mt-24 pt-24 md:-mt-28 md:pt-28">
     
-    <!-- FRAME HERO MATCHING HOMEPAGE/DETAIL - MUCH LESS HEIGHT, MOUNTAINOUS BACKGROUND VISIBLE -->
+    <!-- Hero bez fotky — klient chce web postavený na typografii, ne na obrázcích. -->
     <section class="mx-auto max-w-[1600px] px-5 pt-6 md:px-8 lg:px-10">
-      <div class="relative w-full min-h-[200px] md:min-h-[260px] lg:min-h-[300px] border border-line bg-muted overflow-hidden rounded-[2rem] flex flex-col justify-center items-center text-center p-8 md:p-10">
-         
-         <nav v-reveal="50" class="absolute top-5 left-6 md:top-8 md:left-10 z-20 flex items-center gap-2 text-label font-bold uppercase tracking-[0.2em] text-paper/60 drop-shadow-md">
-           <RouterLink to="/" class="hover:text-paper transition-colors">Domů</RouterLink>
-           <span class="text-paper/40">/</span>
-           <span class="text-paper">Projekty</span>
-         </nav>
+      <div class="relative w-full overflow-hidden rounded-shell border border-line bg-ink p-8 md:p-12 lg:p-16">
+        <nav
+          v-reveal="50"
+          class="flex items-center gap-2 text-label font-bold uppercase tracking-[0.2em] text-paper/60"
+        >
+          <RouterLink to="/" class="transition-colors hover:text-paper">Domů</RouterLink>
+          <span class="text-paper/45">/</span>
+          <span class="text-paper">Projekty</span>
+        </nav>
 
-         <div class="absolute inset-0 bg-ink">
-            <!-- Used mountainous effect from Unsplash with distinct landscape features -->
-            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1600&q=80" 
-                 class="absolute inset-0 h-full w-full object-cover opacity-[0.8] grayscale mix-blend-luminosity brightness-125" />
-            <div class="absolute inset-0 bg-ink/70 pointer-events-none mix-blend-multiply"></div>
-            <!-- More subtle gradient so background is clearly visible -->
-            <div class="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent pointer-events-none"></div>
-         </div>
-         <div class="relative z-10 max-w-4xl pt-8 md:pt-4">
-           <p v-reveal class="text-label uppercase tracking-[0.32em] text-paper/60 font-bold drop-shadow-md">Přehled ročníku</p>
-           <h1 v-reveal="100" class="mt-3 text-display font-bold tracking-[-0.04em] text-paper drop-shadow-lg">
-             Nominované projekty
-           </h1>
-           <p v-reveal="200" class="mt-4 max-w-2xl mx-auto text-small md:text-body leading-relaxed text-paper/80 drop-shadow-md">
-             Prozkoumejte špičkovou architekturu lokálních i nadnárodních developerů a podpořte svého favorita.
-           </p>
-         </div>
+        <div class="relative z-10 mt-10 max-w-4xl">
+          <p v-reveal class="text-label uppercase tracking-[0.32em] text-paper/60 font-bold">
+            Přehled ročníku
+          </p>
+          <h1 v-reveal="100" class="mt-4 text-display font-medium tracking-[-0.04em] text-paper">
+            Nominované projekty
+          </h1>
+          <p v-reveal="200" class="mt-5 max-w-2xl text-body leading-relaxed text-paper/70 md:text-lead">
+            Prozkoumejte špičkovou architekturu lokálních i nadnárodních developerů a podpořte svého
+            favorita.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -91,22 +88,21 @@ const currentFilterLabel = computed(() => {
         <span class="font-bold">Tomuto filtru zatím nejsou přiřazeny žádné projekty.</span> <br/>Zkuste jiný region nebo zrušte filtr pražských částí.
       </div>
 
-      <section v-reveal class="mt-20 overflow-hidden rounded-[2.5rem] border border-ink bg-ink text-paper relative group">
-        <div class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1541888087798-245ed8b6e686')] bg-cover bg-center transition-transform duration-[2s] group-hover:scale-105 mix-blend-overlay pointer-events-none"></div>
+      <section v-reveal class="relative mt-20 overflow-hidden rounded-shell border border-ink bg-ink text-paper">
         <div class="relative z-10 grid gap-8 px-6 py-12 md:grid-cols-[1fr_auto] md:items-center md:px-12 lg:px-16 lg:py-16">
           <div>
-            <p class="text-label uppercase tracking-[0.32em] text-paper/50 font-bold drop-shadow-sm">Pro developery</p>
-            <h2 class="mt-4 max-w-2xl text-h1 font-bold tracking-[-0.04em] drop-shadow-md">
+            <p class="text-label uppercase tracking-[0.32em] text-paper/60 font-bold">Pro developery</p>
+            <h2 class="mt-4 max-w-2xl text-h1 font-medium tracking-[-0.04em]">
               Jste připraveni představit svou práci veřejnosti?
             </h2>
-            <p class="mt-4 max-w-xl text-body leading-relaxed text-paper/80">
+            <p class="mt-4 max-w-xl text-body leading-relaxed text-paper/70">
               Připravte příběh svého projektu, obrazové materiály a detaily přihlášky pro další ročník soutěže.
             </p>
           </div>
 
           <RouterLink
             to="/pro-developery"
-            class="rounded-full border border-paper bg-paper px-8 py-4 text-label font-bold uppercase tracking-[0.2em] text-ink transition-colors duration-300 hover:bg-transparent hover:text-paper shadow-sm w-fit"
+            class="w-fit rounded-full border border-accent bg-accent px-8 py-4 text-label font-bold uppercase tracking-[0.2em] text-ink transition-colors duration-300 hover:bg-transparent hover:text-accent shadow-sm"
           >
             Přihlaste svůj projekt
           </RouterLink>

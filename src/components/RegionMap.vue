@@ -113,13 +113,15 @@ const sortedRegions = computed(() => {
   });
 })
 
+// Kraje musí být čitelné i na světlém pozadí — původní fill-ink/5 s opacity-60
+// bylo na canvasu prakticky neviditelné. Hover používá akcentní barvu z manuálu.
 const regionClass = (name: string) => {
   if (!activeRegions.has(name)) {
-    return 'fill-ink/5 stroke-ink/10 cursor-not-allowed opacity-60'
+    return 'fill-muted stroke-line cursor-not-allowed'
   }
   if (props.selectedRegion === name) return 'fill-ink stroke-ink cursor-pointer'
-  if (hoveredRegion.value === name) return 'fill-ink/15 stroke-ink/60 cursor-pointer'
-  return 'fill-paper stroke-ink/30 cursor-pointer'
+  if (hoveredRegion.value === name) return 'fill-accent stroke-ink cursor-pointer'
+  return 'fill-paper stroke-ink/45 cursor-pointer'
 }
 
 const isFilterActive = computed(() => props.selectedRegion !== 'Všechny regiony' || props.selectedDistrict !== '')
