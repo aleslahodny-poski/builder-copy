@@ -28,3 +28,8 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+# Screenshoty z capture.mjs (jen pro kontrolu, ne do repa)
+/*-1920.png
+/*-430.png
+/out.txt

@@ -7,7 +7,7 @@ import ProjectDetailPage from '@/pages/ProjectDetailPage.vue'
 import ProjectsPage from '@/pages/ProjectsPage.vue'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   scrollBehavior() {
     return { top: 0 }
   },

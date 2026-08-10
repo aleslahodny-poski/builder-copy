@@ -8,7 +8,7 @@ import { featuredProjects, organizers, timelineItems } from '@/data/site'
 // removed unused mobileVideoOpen
 
 import heroVideo from '@/assets/video.mp4'
-const heroPoster = 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80'
+import heroPoster from '@/assets/preview.png'
 const desktopVideo = ref<HTMLVideoElement | null>(null)
 const isDesktopVideoPlaying = ref(true)
 
@@ -66,15 +66,15 @@ const toggleMobileVideo = () => {
 
         <div class="relative grid min-h-[78vh] items-end md:grid-cols-[1.1fr_0.9fr]">
           <div class="z-10 px-6 py-12 sm:px-8 md:px-12 md:py-16 lg:px-16 lg:py-20">
-            <p class="text-xs uppercase tracking-[0.34em] text-paper/60 font-bold">Soutěž v oblasti realit a developmentu</p>
-            <h1 class="mt-6 max-w-4xl text-5xl font-medium leading-none tracking-[-0.04em] sm:text-6xl md:text-7xl lg:text-[5.75rem]">
+            <p v-reveal class="text-xs uppercase tracking-[0.34em] text-paper/60 font-bold">Soutěž v oblasti realit a developmentu</p>
+            <h1 v-reveal="100" class="mt-6 max-w-4xl text-5xl font-medium leading-none tracking-[-0.04em] sm:text-6xl md:text-7xl lg:text-[5.75rem]">
               Realitní<br>projekt roku
             </h1>
-            <p class="mt-6 max-w-2xl text-base leading-8 text-paper/72 md:text-lg">
+            <p v-reveal="200" class="mt-6 max-w-2xl text-base leading-8 text-paper/72 md:text-lg">
               18. ročník největší přehlídky rezidenčního bydlení v České republice. Objevte špičkovou architekturu a podpořte svůj oblíbený projekt.
             </p>
 
-            <div class="mt-10 flex flex-wrap items-center gap-4">
+            <div v-reveal="300" class="mt-10 flex flex-wrap items-center gap-4">
               <RouterLink
                 to="/projekty"
                 class="inline-flex items-center justify-center rounded-full border border-paper bg-paper px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] text-ink transition-colors duration-300 hover:bg-transparent hover:text-paper shadow-sm"
@@ -90,15 +90,15 @@ const toggleMobileVideo = () => {
             </div>
 
             <div class="mt-14 grid gap-6 border-t border-paper/15 pt-8 sm:grid-cols-2 lg:grid-cols-3">
-              <div>
+              <div v-reveal="400">
                 <p class="text-xs uppercase tracking-[0.28em] text-paper/45 font-bold">Vyhlášení</p>
                 <p class="mt-3 text-3xl font-medium tracking-[-0.03em]">Leden 2027</p>
               </div>
-              <div>
+              <div v-reveal="500">
                 <p class="text-xs uppercase tracking-[0.28em] text-paper/45 font-bold">Region</p>
                 <p class="mt-3 text-3xl font-medium tracking-[-0.03em]">Celá ČR</p>
               </div>
-              <div>
+              <div v-reveal="600">
                 <p class="text-xs uppercase tracking-[0.28em] text-paper/45 font-bold">Vítěz</p>
                 <p class="mt-3 text-3xl font-medium tracking-[-0.03em]">Váš hlas</p>
               </div>
@@ -136,7 +136,7 @@ const toggleMobileVideo = () => {
     </section>
 
     <section id="timeline" class="mx-auto max-w-[1600px] px-5 py-20 md:px-8 lg:px-10 lg:py-24">
-      <div class="mb-16">
+      <div v-reveal class="mb-16">
         <p class="text-xs uppercase tracking-[0.32em] text-ink/45 font-bold">Harmonogram</p>
         <h2 class="mt-5 text-4xl font-medium tracking-[-0.04em] text-ink md:text-5xl max-w-2xl">
           Klíčové momenty ročníku 2026
@@ -151,6 +151,7 @@ const toggleMobileVideo = () => {
           <article
             v-for="(item, index) in timelineItems"
             :key="item.title"
+            v-reveal="index * 150"
             class="relative md:pt-10 pl-10 md:pl-0"
           >
             <div class="absolute left-0 top-0 h-[9px] w-[9px] rounded-full bg-ink"></div>
@@ -169,7 +170,7 @@ const toggleMobileVideo = () => {
 
     <section class="border-y border-line bg-paper">
       <div class="mx-auto grid max-w-[1600px] gap-10 px-5 py-20 md:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-10 lg:py-24">
-        <div class="self-center">
+        <div v-reveal class="self-center">
           <p class="text-xs uppercase tracking-[0.32em] text-ink/45 font-bold">Realitní Projekt Roku</p>
           <h2 class="mt-5 text-4xl font-medium tracking-[-0.04em] text-ink md:text-5xl">
             O soutěži
@@ -194,8 +195,9 @@ const toggleMobileVideo = () => {
 
         <div class="grid gap-6 sm:grid-cols-2">
           <article
-            v-for="organizer in organizers"
+            v-for="(organizer, i) in organizers"
             :key="organizer.name"
+            v-reveal="i * 200"
             class="rounded-card border border-line bg-canvas p-4"
           >
             <div class="aspect-[4/5] overflow-hidden rounded-card border border-line bg-muted">
@@ -211,7 +213,7 @@ const toggleMobileVideo = () => {
     </section>
 
     <section class="mx-auto max-w-[1600px] px-5 py-20 md:px-8 lg:px-10 lg:py-24">
-      <div class="mb-12">
+      <div v-reveal class="mb-12">
         <p class="text-xs uppercase tracking-[0.32em] text-ink/45 font-bold">Projekty v boji o vítězství</p>
         <h2 class="mt-5 text-4xl font-medium tracking-[-0.04em] text-ink md:text-5xl">
           Nominované projekty
@@ -219,10 +221,10 @@ const toggleMobileVideo = () => {
       </div>
 
       <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        <ProjectCard v-for="project in featuredProjects" :key="project.slug" :project="project" />
+        <ProjectCard v-for="(project, i) in featuredProjects" :key="project.slug" :project="project" v-reveal="i * 100" />
       </div>
 
-      <div class="mt-16 flex justify-center">
+      <div v-reveal class="mt-16 flex justify-center">
         <RouterLink
           to="/projekty"
           class="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-ink bg-ink px-12 py-5 text-xs font-bold uppercase tracking-[0.25em] text-paper shadow-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
@@ -236,6 +238,7 @@ const toggleMobileVideo = () => {
     <section class="flex flex-col border-y border-line md:flex-row min-h-[500px]">
       <RouterLink 
         to="/pro-developery"
+        v-reveal="100"
         class="group relative flex flex-1 flex-col items-center justify-center overflow-hidden bg-paper p-12 text-center transition-all duration-[600ms] hover:-translate-y-2 hover:shadow-[0_-20px_60px_-15px_rgba(0,0,0,0.1)] hover:z-20 md:border-r md:border-line"
       >
         <div class="absolute inset-0 bg-ink/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100"></div>

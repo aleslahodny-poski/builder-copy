@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "test:unit": "vitest",
     "build-only": "vite build",
+    "postbuild": "node -e \"require('fs').copyFileSync('dist/index.html', 'dist/404.html')\"",
     "type-check": "vue-tsc --build",
     "lint": "eslint . --fix",
     "format": "prettier --write src/"

@@ -59,3 +59,26 @@ svg {
   background: hsl(var(--foreground));
   color: hsl(var(--paper));
 }
+
+/* Subtle reveal scroll animations */
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-hidden {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-visible {
+    transition: none;
+  }
+}

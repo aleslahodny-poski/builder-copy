@@ -24,12 +24,12 @@ defineProps<{
 
     <div class="flex flex-1 flex-col gap-5 p-5">
       <div class="space-y-3">
-        <h3 class="text-xl font-medium leading-tight text-ink">{{ project.name }}</h3>
+        <h3 class="text-xl font-bold leading-tight text-ink">{{ project.name }}</h3>
         <p class="text-sm leading-6 text-ink/68">{{ project.summary }}</p>
       </div>
 
       <div class="mt-auto flex items-center justify-between gap-4 border-t border-line pt-4 text-sm text-ink/65">
-        <span>{{ project.developer }}</span>
+        <span>{{ project.developer.name }}</span>
         <span>{{ project.district ?? project.region }}</span>
       </div>
     </div>
