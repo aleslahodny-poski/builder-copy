@@ -1,11 +1,23 @@
 :root {
-  --background: 0 0% 97%;
-  --foreground: 0 0% 7%;
-  --paper: 0 0% 100%;
-  --muted: 0 0% 94%;
-  --line: 0 0% 84%;
-  --line-strong: 0 0% 14%;
-  --shadow: 0 0% 7%;
+  /* Paleta z grafického manuálu, koncept 1.
+     Šest plochých barev nestačí na UI, takže --background a --muted jsou
+     odvozené světlé tóny — obojí v odstínu navy, žádná nová barva nepřibývá. */
+  --foreground: 215 21% 27%; /* #364253 */
+  --accent: 27 36% 65%; /* #c7a487 */
+  --secondary: 202 10% 61%; /* #939fa6 */
+  --line: 0 0% 84%; /* #d6d6d6 */
+  --paper: 0 0% 100%; /* #ffffff */
+  --black: 0 0% 0%; /* #000000 */
+  --background: 215 20% 97%; /* odvozeno */
+  --muted: 215 16% 94%; /* odvozeno */
+
+  /* Barvy soutěžních kategorií */
+  --cat-public: 202 10% 61%; /* Cena veřejnosti */
+  --cat-jury: 215 21% 27%; /* Cena odborné poroty */
+  --cat-architects: 27 36% 65%; /* Cena architektů */
+
+  --line-strong: 215 21% 27%;
+  --shadow: 215 21% 27%;
   --radius-soft: 0.75rem;
   --radius-card: 1.5rem;
   --radius-shell: 2rem;
@@ -24,7 +36,8 @@ body {
   min-height: 100vh;
   background: hsl(var(--background));
   color: hsl(var(--foreground));
-  font-family: 'Questrial', Questrial, Arial, sans-serif;
+  font-family: 'Gellix', 'Jost', Arial, sans-serif;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

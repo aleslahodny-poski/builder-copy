@@ -34,7 +34,7 @@ const currentFilterLabel = computed(() => {
     <section class="mx-auto max-w-[1600px] px-5 pt-6 md:px-8 lg:px-10">
       <div class="relative w-full min-h-[200px] md:min-h-[260px] lg:min-h-[300px] border border-line bg-muted overflow-hidden rounded-[2rem] flex flex-col justify-center items-center text-center p-8 md:p-10">
          
-         <nav v-reveal="50" class="absolute top-5 left-6 md:top-8 md:left-10 z-20 flex items-center gap-2 text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-paper/60 drop-shadow-md">
+         <nav v-reveal="50" class="absolute top-5 left-6 md:top-8 md:left-10 z-20 flex items-center gap-2 text-label font-bold uppercase tracking-[0.2em] text-paper/60 drop-shadow-md">
            <RouterLink to="/" class="hover:text-paper transition-colors">Domů</RouterLink>
            <span class="text-paper/40">/</span>
            <span class="text-paper">Projekty</span>
@@ -49,11 +49,11 @@ const currentFilterLabel = computed(() => {
             <div class="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent pointer-events-none"></div>
          </div>
          <div class="relative z-10 max-w-4xl pt-8 md:pt-4">
-           <p v-reveal class="text-xs uppercase tracking-[0.32em] text-paper/60 font-bold drop-shadow-md">Přehled ročníku</p>
-           <h1 v-reveal="100" class="mt-3 text-4xl font-bold tracking-[-0.04em] text-paper md:text-5xl lg:text-6xl drop-shadow-lg">
+           <p v-reveal class="text-label uppercase tracking-[0.32em] text-paper/60 font-bold drop-shadow-md">Přehled ročníku</p>
+           <h1 v-reveal="100" class="mt-3 text-display font-bold tracking-[-0.04em] text-paper drop-shadow-lg">
              Nominované projekty
            </h1>
-           <p v-reveal="200" class="mt-4 max-w-2xl mx-auto text-sm md:text-base leading-relaxed text-paper/80 drop-shadow-md">
+           <p v-reveal="200" class="mt-4 max-w-2xl mx-auto text-small md:text-body leading-relaxed text-paper/80 drop-shadow-md">
              Prozkoumejte špičkovou architekturu lokálních i nadnárodních developerů a podpořte svého favorita.
            </p>
          </div>
@@ -73,10 +73,10 @@ const currentFilterLabel = computed(() => {
 
       <div v-if="selectedRegion !== 'Všechny regiony' || selectedDistrict !== ''" class="mt-16 flex flex-col gap-4 border-y border-line py-8 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <p class="text-[10px] sm:text-xs uppercase tracking-[0.3em] font-bold text-ink/45">Aktuální filtr</p>
-          <p class="mt-2 text-2xl md:text-3xl font-bold tracking-[-0.03em] text-ink border-l-4 border-ink pl-4 ml-[-1rem]">{{ currentFilterLabel }}</p>
+          <p class="text-label uppercase tracking-[0.3em] font-bold text-ink/45">Aktuální filtr</p>
+          <p class="mt-2 text-h2 font-bold tracking-[-0.03em] text-ink border-l-4 border-ink pl-4 ml-[-1rem]">{{ currentFilterLabel }}</p>
         </div>
-        <p class="text-[10px] sm:text-xs uppercase font-bold tracking-[0.2em] text-ink/55 rounded-full border border-line px-5 py-3 bg-canvas whitespace-nowrap">Zobrazeno {{ filteredProjects.length }} projektů</p>
+        <p class="text-label uppercase font-bold tracking-[0.2em] text-ink/70 rounded-full border border-line px-5 py-3 bg-canvas whitespace-nowrap">Zobrazeno {{ filteredProjects.length }} projektů</p>
       </div>
 
       <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -85,9 +85,9 @@ const currentFilterLabel = computed(() => {
 
       <div
         v-if="filteredProjects.length === 0"
-        class="mt-10 rounded-card border border-dashed border-ink/20 bg-canvas px-8 py-16 text-center text-lg leading-relaxed text-ink/65"
+        class="mt-10 rounded-card border border-dashed border-ink/20 bg-canvas px-8 py-16 text-center text-lead leading-relaxed text-ink/70"
       >
-        <svg class="h-12 w-12 mx-auto text-ink/20 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <svg class="h-12 w-12 mx-auto text-ink/45 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
         <span class="font-bold">Tomuto filtru zatím nejsou přiřazeny žádné projekty.</span> <br/>Zkuste jiný region nebo zrušte filtr pražských částí.
       </div>
 
@@ -95,18 +95,18 @@ const currentFilterLabel = computed(() => {
         <div class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1541888087798-245ed8b6e686')] bg-cover bg-center transition-transform duration-[2s] group-hover:scale-105 mix-blend-overlay pointer-events-none"></div>
         <div class="relative z-10 grid gap-8 px-6 py-12 md:grid-cols-[1fr_auto] md:items-center md:px-12 lg:px-16 lg:py-16">
           <div>
-            <p class="text-[10px] sm:text-xs uppercase tracking-[0.32em] text-paper/50 font-bold drop-shadow-sm">Pro developery</p>
-            <h2 class="mt-4 max-w-2xl text-4xl font-bold tracking-[-0.04em] drop-shadow-md">
+            <p class="text-label uppercase tracking-[0.32em] text-paper/50 font-bold drop-shadow-sm">Pro developery</p>
+            <h2 class="mt-4 max-w-2xl text-h1 font-bold tracking-[-0.04em] drop-shadow-md">
               Jste připraveni představit svou práci veřejnosti?
             </h2>
-            <p class="mt-4 max-w-xl text-base leading-relaxed text-paper/80">
+            <p class="mt-4 max-w-xl text-body leading-relaxed text-paper/80">
               Připravte příběh svého projektu, obrazové materiály a detaily přihlášky pro další ročník soutěže.
             </p>
           </div>
 
           <RouterLink
             to="/pro-developery"
-            class="rounded-full border border-paper bg-paper px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] text-ink transition-colors duration-300 hover:bg-transparent hover:text-paper shadow-sm w-fit"
+            class="rounded-full border border-paper bg-paper px-8 py-4 text-label font-bold uppercase tracking-[0.2em] text-ink transition-colors duration-300 hover:bg-transparent hover:text-paper shadow-sm w-fit"
           >
             Přihlaste svůj projekt
           </RouterLink>

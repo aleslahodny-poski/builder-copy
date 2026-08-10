@@ -8,7 +8,7 @@ import { RouterLink } from 'vue-router'
     <header class="relative flex h-[300px] w-full items-center justify-center overflow-hidden border-b border-line bg-ink perspective-[1000px]">
       <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=2000&q=80" alt="Architecture Horizon" class="absolute inset-0 h-full w-full object-cover opacity-30 mix-blend-luminosity" />
       <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-transparent" />
-      <h1 v-reveal class="relative z-10 text-4xl md:text-6xl uppercase tracking-[0.2em] text-paper font-bold drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)] transition-transform duration-[2000ms] hover:scale-105" style="transform: translateZ(20px);">
+      <h1 v-reveal class="relative z-10 text-display uppercase tracking-[0.2em] text-paper font-bold drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)] transition-transform duration-[2000ms] hover:scale-105" style="transform: translateZ(20px);">
         Pro partnery
       </h1>
     </header>
@@ -16,8 +16,8 @@ import { RouterLink } from 'vue-router'
     <!-- SECTION 1: VALUE PROPOSITION (Strategic Gateway) -->
     <section class="border-b border-line bg-paper px-5 py-24 md:px-8 lg:px-10 lg:py-32">
       <div v-reveal class="mx-auto max-w-5xl text-center">
-        <p class="mb-6 text-xs font-bold uppercase tracking-[0.32em] text-ink/60">Proč být partnerem?</p>
-        <p class="text-lg leading-[1.8] text-ink/80 md:text-xl">
+        <p class="mb-6 text-label font-bold uppercase tracking-[0.32em] text-ink/70">Proč být partnerem?</p>
+        <p class="text-lead leading-[1.8] text-ink/80">
           Partnerství na tomto projektu přináší mnoho výhod a popředí zájmu Čechů, ale i cizinců, kteří hledají vhodné nemovitosti. 
           Odborníci, podnikatelé, veřejnost – všechny cílové skupiny obracejí svou pozornost k developerským projektům. 
           <span class="relative inline-block font-bold text-ink drop-shadow-[0_0_12px_rgba(0,0,0,0.15)]">Strategická spolupráce</span> se soutěží dá partnerovi 
@@ -30,8 +30,8 @@ import { RouterLink } from 'vue-router'
     <section class="bg-ink px-5 py-24 text-paper md:px-8 lg:px-10 lg:py-32">
       <div class="mx-auto max-w-[1600px]">
         <div v-reveal class="mb-16 text-center">
-          <p class="text-xs font-bold uppercase tracking-[0.32em] text-paper/50 mb-4">Možnosti zapojení</p>
-          <h2 class="text-3xl font-bold tracking-tight text-paper md:text-5xl">Nabízíme aktivní zapojení v podobě:</h2>
+          <p class="text-label font-bold uppercase tracking-[0.32em] text-paper/50 mb-4">Možnosti zapojení</p>
+          <h2 class="text-h1 font-bold tracking-tight text-paper">Nabízíme aktivní zapojení v podobě:</h2>
         </div>
 
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -39,9 +39,9 @@ import { RouterLink } from 'vue-router'
           <article v-reveal="100" class="group relative flex min-h-[450px] flex-col justify-end overflow-hidden border border-paper/10 bg-paper/[0.02] p-8 transition-colors duration-700 hover:border-[#D4AF37]/50 hover:bg-[#D4AF37]/10">
             <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent z-10 transition-opacity duration-500 group-hover:opacity-70"></div>
             <div class="relative z-20">
-              <span class="mb-4 inline-block text-xs font-bold uppercase tracking-widest text-[#D4AF37]">Generální</span>
-              <h3 class="mb-3 text-3xl font-bold uppercase tracking-widest text-paper">Partnerství</h3>
-              <p class="text-sm leading-relaxed text-paper/70 transition-colors group-hover:text-paper">Exkluzivní zastoupení, plná asociace se značkou přes všechny mediální výstupy a maximální viditelnost.</p>
+              <span class="mb-4 inline-block text-label font-bold uppercase tracking-widest text-[#D4AF37]">Generální</span>
+              <h3 class="mb-3 text-h2 font-bold uppercase tracking-widest text-paper">Partnerství</h3>
+              <p class="text-small leading-relaxed text-paper/70 transition-colors group-hover:text-paper">Exkluzivní zastoupení, plná asociace se značkou přes všechny mediální výstupy a maximální viditelnost.</p>
             </div>
             <div class="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-[#D4AF37]/30 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
           </article>
@@ -50,9 +50,9 @@ import { RouterLink } from 'vue-router'
           <article v-reveal="200" class="group relative flex min-h-[450px] flex-col justify-end overflow-hidden border border-paper/10 bg-paper/[0.02] p-8 transition-colors duration-700 hover:border-[#FFD700]/50 hover:bg-[#FFD700]/10">
             <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent z-10 transition-opacity duration-500 group-hover:opacity-70"></div>
             <div class="relative z-20">
-              <span class="mb-4 inline-block text-xs font-bold uppercase tracking-widest text-[#FFD700]">Zlaté</span>
-              <h3 class="mb-3 text-3xl font-bold uppercase tracking-widest text-paper">Partnerství</h3>
-              <p class="text-sm leading-relaxed text-paper/70 transition-colors group-hover:text-paper">Silná přítomnost na hlavních formátech, masivní vizibilita u odborné i laické veřejnosti.</p>
+              <span class="mb-4 inline-block text-label font-bold uppercase tracking-widest text-[#FFD700]">Zlaté</span>
+              <h3 class="mb-3 text-h2 font-bold uppercase tracking-widest text-paper">Partnerství</h3>
+              <p class="text-small leading-relaxed text-paper/70 transition-colors group-hover:text-paper">Silná přítomnost na hlavních formátech, masivní vizibilita u odborné i laické veřejnosti.</p>
             </div>
             <div class="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-[#FFD700]/30 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
           </article>
@@ -61,9 +61,9 @@ import { RouterLink } from 'vue-router'
           <article v-reveal="300" class="group relative flex min-h-[450px] flex-col justify-end overflow-hidden border border-paper/10 bg-paper/[0.02] p-8 transition-colors duration-700 hover:border-[#C0C0C0]/50 hover:bg-[#C0C0C0]/10">
              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent z-10 transition-opacity duration-500 group-hover:opacity-70"></div>
             <div class="relative z-20">
-              <span class="mb-4 inline-block text-xs font-bold uppercase tracking-widest text-[#C0C0C0]">Stříbrné</span>
-              <h3 class="mb-3 text-3xl font-bold uppercase tracking-widest text-paper">Partnerství</h3>
-              <p class="text-sm leading-relaxed text-paper/70 transition-colors group-hover:text-paper">Základní partnerské pokrytí v tiskových i digitálních celostátních kanálech soutěže.</p>
+              <span class="mb-4 inline-block text-label font-bold uppercase tracking-widest text-[#C0C0C0]">Stříbrné</span>
+              <h3 class="mb-3 text-h2 font-bold uppercase tracking-widest text-paper">Partnerství</h3>
+              <p class="text-small leading-relaxed text-paper/70 transition-colors group-hover:text-paper">Základní partnerské pokrytí v tiskových i digitálních celostátních kanálech soutěže.</p>
             </div>
              <div class="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-[#C0C0C0]/30 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
           </article>
@@ -72,9 +72,9 @@ import { RouterLink } from 'vue-router'
           <article v-reveal="400" class="group relative flex min-h-[450px] flex-col justify-end overflow-hidden border border-paper/10 bg-paper/[0.02] p-8 transition-colors duration-700 hover:border-[#4A90E2]/50 hover:bg-[#4A90E2]/10">
              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent z-10 transition-opacity duration-500 group-hover:opacity-70"></div>
             <div class="relative z-20">
-              <span class="mb-4 inline-block text-xs font-bold uppercase tracking-widest text-[#4A90E2]">Mediální</span>
-              <h3 class="mb-3 text-3xl font-bold uppercase tracking-widest text-paper">Partnerství</h3>
-              <p class="text-sm leading-relaxed text-paper/70 transition-colors group-hover:text-paper">Vzájemná podpora prémiového obsahu, PR synergii a budování masového dosahu.</p>
+              <span class="mb-4 inline-block text-label font-bold uppercase tracking-widest text-[#4A90E2]">Mediální</span>
+              <h3 class="mb-3 text-h2 font-bold uppercase tracking-widest text-paper">Partnerství</h3>
+              <p class="text-small leading-relaxed text-paper/70 transition-colors group-hover:text-paper">Vzájemná podpora prémiového obsahu, PR synergii a budování masového dosahu.</p>
             </div>
             <div class="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-[#4A90E2]/30 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
           </article>
@@ -86,36 +86,36 @@ import { RouterLink } from 'vue-router'
     <section class="border-y border-line bg-paper px-5 py-24 md:px-8 lg:px-10 lg:py-32">
       <div class="mx-auto max-w-[1600px]">
         <div v-reveal class="mb-16 md:mb-24">
-          <p class="text-xs font-bold uppercase tracking-[0.32em] text-ink/50 mb-4">Benefity</p>
-          <h2 class="text-3xl font-bold tracking-tight text-ink md:text-5xl">Hlavní benefity partnerství</h2>
+          <p class="text-label font-bold uppercase tracking-[0.32em] text-ink/70 mb-4">Benefity</p>
+          <h2 class="text-h1 font-bold tracking-tight text-ink">Hlavní benefity partnerství</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
           <div v-reveal="100" class="flex items-start gap-6 group">
-             <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-ink/20 text-ink transition-colors duration-500 group-hover:bg-ink group-hover:text-paper font-bold text-lg">01</div>
+             <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-ink/20 text-ink transition-colors duration-500 group-hover:bg-ink group-hover:text-paper font-bold text-lead">01</div>
              <div>
-               <h3 class="text-xl font-bold uppercase tracking-widest text-ink mb-3">Nové obchodní kontakty</h3>
-               <p class="text-ink/75 leading-relaxed text-sm">Získáte přímou vazbu s účastníky, developery a odborníky na realitním trhu napříč Českou republikou i v případě zájmu o spolupráci do budoucna.</p>
+               <h3 class="text-lead font-bold uppercase tracking-widest text-ink mb-3">Nové obchodní kontakty</h3>
+               <p class="text-ink/80 leading-relaxed text-small">Získáte přímou vazbu s účastníky, developery a odborníky na realitním trhu napříč Českou republikou i v případě zájmu o spolupráci do budoucna.</p>
              </div>
           </div>
           <div v-reveal="200" class="flex items-start gap-6 group">
-             <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-ink/20 text-ink transition-colors duration-500 group-hover:bg-ink group-hover:text-paper font-bold text-lg">02</div>
+             <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-ink/20 text-ink transition-colors duration-500 group-hover:bg-ink group-hover:text-paper font-bold text-lead">02</div>
              <div>
-               <h3 class="text-xl font-bold uppercase tracking-widest text-ink mb-3">Mediální podporu značky</h3>
-               <p class="text-ink/75 leading-relaxed text-sm">Široké PR zviditelnění směrem k laické společnosti v regionech, i silná prezence mezi odbornou obcí a potenciálními klienty.</p>
+               <h3 class="text-lead font-bold uppercase tracking-widest text-ink mb-3">Mediální podporu značky</h3>
+               <p class="text-ink/80 leading-relaxed text-small">Široké PR zviditelnění směrem k laické společnosti v regionech, i silná prezence mezi odbornou obcí a potenciálními klienty.</p>
              </div>
           </div>
           <div v-reveal="300" class="flex items-start gap-6 group">
-             <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-ink/20 text-ink transition-colors duration-500 group-hover:bg-ink group-hover:text-paper font-bold text-lg">03</div>
+             <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-ink/20 text-ink transition-colors duration-500 group-hover:bg-ink group-hover:text-paper font-bold text-lead">03</div>
              <div>
-               <h3 class="text-xl font-bold uppercase tracking-widest text-ink mb-3">Účast na slavnostním večeru</h3>
-               <p class="text-ink/75 leading-relaxed text-sm">Zajistěte si prémiová místa v centru dění pro své zástupce při oficiálním moderovaném vyhlašování výsledků prestižní soutěže.</p>
+               <h3 class="text-lead font-bold uppercase tracking-widest text-ink mb-3">Účast na slavnostním večeru</h3>
+               <p class="text-ink/80 leading-relaxed text-small">Zajistěte si prémiová místa v centru dění pro své zástupce při oficiálním moderovaném vyhlašování výsledků prestižní soutěže.</p>
              </div>
           </div>
           <div v-reveal="400" class="flex items-start gap-6 group">
-             <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-ink/20 text-ink transition-colors duration-500 group-hover:bg-ink group-hover:text-paper font-bold text-lg">04</div>
+             <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-ink/20 text-ink transition-colors duration-500 group-hover:bg-ink group-hover:text-paper font-bold text-lead">04</div>
              <div>
-               <h3 class="text-xl font-bold uppercase tracking-widest text-ink mb-3">Distribuce materiálů na místě</h3>
-               <p class="text-ink/75 leading-relaxed text-sm">Jedinečná příležitost přímé propagace a fyzické distribuce vašich propagačních nebo edukačních materiálů elitním hostům na galavečeru.</p>
+               <h3 class="text-lead font-bold uppercase tracking-widest text-ink mb-3">Distribuce materiálů na místě</h3>
+               <p class="text-ink/80 leading-relaxed text-small">Jedinečná příležitost přímé propagace a fyzické distribuce vašich propagačních nebo edukačních materiálů elitním hostům na galavečeru.</p>
              </div>
           </div>
         </div>
@@ -129,39 +129,39 @@ import { RouterLink } from 'vue-router'
 
       <div class="flex animate-[ticker_30s_linear_infinite] whitespace-nowrap">
         <div class="flex items-center gap-12 px-6">
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-ink/40">OBCHODNÍ KONTAKTY</span>
+          <span class="text-label font-bold uppercase tracking-[0.2em] text-ink/45">OBCHODNÍ KONTAKTY</span>
           <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-ink/40">PODÍL NA TRHU</span>
+          <span class="text-label font-bold uppercase tracking-[0.2em] text-ink/45">PODÍL NA TRHU</span>
           <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-ink/40">GALAVEČER</span>
+          <span class="text-label font-bold uppercase tracking-[0.2em] text-ink/45">GALAVEČER</span>
           <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-ink/40">MEDIÁLNÍ PODPORA</span>
+          <span class="text-label font-bold uppercase tracking-[0.2em] text-ink/45">MEDIÁLNÍ PODPORA</span>
           <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-ink/40">PRESTIŽ</span>
-          <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
-        </div>
-        <div class="flex items-center gap-12 px-6">
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-ink/40">OBCHODNÍ KONTAKTY</span>
-          <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-ink/40">PODÍL NA TRHU</span>
-          <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-ink/40">GALAVEČER</span>
-          <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-ink/40">MEDIÁLNÍ PODPORA</span>
-          <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-ink/40">PRESTIŽ</span>
+          <span class="text-label font-bold uppercase tracking-[0.2em] text-ink/45">PRESTIŽ</span>
           <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
         </div>
         <div class="flex items-center gap-12 px-6">
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-ink/40">OBCHODNÍ KONTAKTY</span>
+          <span class="text-label font-bold uppercase tracking-[0.2em] text-ink/45">OBCHODNÍ KONTAKTY</span>
           <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-ink/40">PODÍL NA TRHU</span>
+          <span class="text-label font-bold uppercase tracking-[0.2em] text-ink/45">PODÍL NA TRHU</span>
           <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-ink/40">GALAVEČER</span>
+          <span class="text-label font-bold uppercase tracking-[0.2em] text-ink/45">GALAVEČER</span>
           <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-ink/40">MEDIÁLNÍ PODPORA</span>
+          <span class="text-label font-bold uppercase tracking-[0.2em] text-ink/45">MEDIÁLNÍ PODPORA</span>
           <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
-          <span class="text-xs font-bold uppercase tracking-[0.2em] text-ink/40">PRESTIŽ</span>
+          <span class="text-label font-bold uppercase tracking-[0.2em] text-ink/45">PRESTIŽ</span>
+          <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
+        </div>
+        <div class="flex items-center gap-12 px-6">
+          <span class="text-label font-bold uppercase tracking-[0.2em] text-ink/45">OBCHODNÍ KONTAKTY</span>
+          <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
+          <span class="text-label font-bold uppercase tracking-[0.2em] text-ink/45">PODÍL NA TRHU</span>
+          <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
+          <span class="text-label font-bold uppercase tracking-[0.2em] text-ink/45">GALAVEČER</span>
+          <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
+          <span class="text-label font-bold uppercase tracking-[0.2em] text-ink/45">MEDIÁLNÍ PODPORA</span>
+          <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
+          <span class="text-label font-bold uppercase tracking-[0.2em] text-ink/45">PRESTIŽ</span>
           <div class="h-1.5 w-1.5 rounded-full bg-ink/20"></div>
         </div>
       </div>

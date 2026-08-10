@@ -174,7 +174,7 @@ const selectDistrict = (name: string) => {
             
             <button
               type="button"
-              class="flex w-full items-center justify-between rounded-full border px-4 sm:px-5 py-3 text-[10px] sm:text-xs uppercase tracking-[0.1em] font-bold transition-all duration-300"
+              class="flex w-full items-center justify-between rounded-full border px-4 sm:px-5 py-3 text-label uppercase tracking-[0.1em] font-bold transition-all duration-300"
               :class="[
                 !activeRegions.has(region.name) ? 'border-line/60 bg-canvas/50 text-ink/45 cursor-not-allowed opacity-80' :
                 selectedRegion === region.name ? 'border-ink bg-ink text-paper shadow-sm cursor-pointer' : 
@@ -191,7 +191,7 @@ const selectDistrict = (name: string) => {
 
             <!-- Prague Sub-Districts Dropdown spans both columns -->
             <div v-if="region.name === 'Praha' && selectedRegion === 'Praha'" class="col-span-2 mb-2 p-4 rounded-3xl bg-canvas border border-line">
-               <p class="text-[10px] uppercase tracking-[0.2em] text-ink/45 font-bold mb-3 text-center">Pražské části</p>
+               <p class="text-label uppercase tracking-[0.2em] text-secondary font-bold mb-3 text-center">Pražské části</p>
                <div class="grid grid-cols-5 gap-2">
                  <button
                    v-for="district in pragueDistricts"
@@ -220,7 +220,7 @@ const selectDistrict = (name: string) => {
     <!-- Global Floating Tooltip -->
     <div 
       v-if="hoveredRegion || hoveredDistrict"
-      class="fixed bg-ink text-paper text-[10px] sm:text-xs font-bold uppercase tracking-widest px-4 py-2 sm:px-6 sm:py-3 rounded-full pointer-events-none z-[100] shadow-xl text-center whitespace-nowrap"
+      class="fixed bg-ink text-paper text-label font-bold uppercase tracking-widest px-4 py-2 sm:px-6 sm:py-3 rounded-full pointer-events-none z-[100] shadow-xl text-center whitespace-nowrap"
       :style="{ left: mouseX + 'px', top: mouseY + 'px', transform: 'translate(-50%, -150%)' }"
     >
       <template v-if="hoveredDistrict">
