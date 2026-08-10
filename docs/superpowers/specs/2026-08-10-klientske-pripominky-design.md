@@ -196,6 +196,7 @@ originals must be requested before production.
   page and Prague already expands to clickable tiles for Praha 1–10. What the client wants
   beyond this is unknown; he is being asked. Possible outcomes: nothing, extending tiles to
   Praha 1–22, or a real clickable Prague SVG.
+  *Structurally untouched, but its colours had to be fixed — see Deviations.*
 - **Gellix licence.** Typography ships on Jost until webfonts are supplied.
 - **Jury identities.** Placeholders until the client provides names and photos.
 - **Production group logos.** Screenshot crops until originals arrive.
@@ -218,6 +219,37 @@ alongside. Ends with a build and a deploy.
 
 **Batch 3 — cleanup.** Unsplash removal, address fix, plus whatever the client answers about
 the map.
+
+## Deviations from this spec, as built
+
+Recorded after implementation so the spec matches what actually shipped.
+
+1. **Region map colours.** The map was meant to stay untouched, but the palette change
+   exposed a pre-existing legibility problem: inactive regions were `fill-ink/5` at
+   `opacity-60` and active ones plain white, which on the new light canvas rendered the map
+   nearly invisible. Restyled to `fill-muted` (inactive) / `fill-paper` with a
+   `stroke-ink/45` outline (active) / `fill-accent` on hover. Structure and behaviour
+   unchanged — this is a colour fix, not the client's requested map change.
+
+2. **Type scale is seven steps, not six.** `display`, `h1`, `h2`, `lead`, `body`, `small`,
+   `label`. Collapsing `lead` into `body` would have forced uppercase tracked sub-headings
+   to jump a full tier. Seven still satisfies "maximálně pár úrovní" and is down from the
+   twelve steps the site started with.
+
+3. **Muted text opacities consolidated.** Not in the original spec. The site used twelve
+   different `text-ink/NN` values; these collapsed to three (`/45`, `/70`, `/80`) plus
+   `text-secondary` for eyebrow labels — the same "too many levels" problem expressed in
+   colour rather than size.
+
+4. **Two Unsplash photos remain.** Only the Projects page was in scope. `ForDevelopersPage`
+   and `ForPartnersPage` still hot-link hero photos from `images.unsplash.com`. Removing
+   them means redesigning both heroes, which is beyond this round — flagged to the user
+   instead. Note the hot-linking is a live dependency on a third-party CDN.
+
+5. **Partner logos are text tiles.** No partner logo files exist; only `adresa` was
+   recoverable (from the footer screenshot). The other partners render as monochrome square
+   tiles with the name set in type, which satisfies "monochrom / základní formát čtverec"
+   and is trivially swapped for real logos later.
 
 ## Verification
 
