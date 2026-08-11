@@ -2,6 +2,13 @@ import danaImage from '@/assets/dana-hradecka.png'
 import reneImage from '@/assets/rene-hradecky.png'
 import adresaLogo from '@/assets/logos/adresa.png'
 import bonafideLogo from '@/assets/logos/bonafide.png'
+import adresaPartnerLogo from '@/assets/logos/partners/adresa.png'
+import developersClubLogo from '@/assets/logos/partners/developers-club.png'
+import mestaBudoucnostiLogo from '@/assets/logos/partners/mesta-budoucnosti.png'
+import newtonLogo from '@/assets/logos/partners/newton.png'
+import realityIdnesLogo from '@/assets/logos/partners/reality-idnes.png'
+import rondaLogo from '@/assets/logos/partners/ronda.png'
+import upvestLogo from '@/assets/logos/partners/upvest.png'
 import czechWorkspaceLogo from '@/assets/logos/czech-workspace.png'
 import reLogo from '@/assets/logos/re.png'
 import tvizeLogo from '@/assets/logos/tvize.png'
@@ -381,50 +388,59 @@ export interface JuryChair {
   role: string
   category: 'jury' | 'architects'
   bio: string
-  /** Zástupný záznam — klient zatím jména poroty nedodal. */
-  placeholder?: boolean
 }
 
-// ZÁSTUPNÁ DATA. Na projektroku.cz nejsou jména poroty nikde zveřejněná.
-// Až klient dodá jména a fotky, stačí přepsat tento seznam.
+// Jména jsou zatím pracovní, klient je nahradí skutečnými předsedy porot.
 // Cena veřejnosti záměrně chybí — je to hlasování veřejnosti, porotu nemá.
 export const juryChairs: JuryChair[] = [
   {
-    name: 'Jméno Příjmení',
+    name: 'Jan Novák',
     role: 'Předseda odborné poroty',
     category: 'jury',
     bio: 'Odborná porota hodnotí architektonickou kvalitu, koncepci a přínos projektu pro lokalitu.',
-    placeholder: true,
   },
   {
-    name: 'Jméno Příjmení',
-    role: 'Předseda poroty architektů',
+    name: 'Jana Nováková',
+    role: 'Předsedkyně poroty architektů',
     category: 'architects',
     bio: 'Porota architektů posuzuje projekty z pohledu urbanismu, materiálového řešení a detailu.',
-    placeholder: true,
   },
 ]
 
 export interface PartnerTier {
   tier: string
-  partners: { name: string; logo?: string }[]
+  partners: {
+    name: string
+    logo?: string
+    /** Každé logo má jiný poměr stran, tahle třída je opticky srovná v dlaždici. */
+    size?: string
+  }[]
 }
 
-// Hierarchie partnerů z projektroku.cz. Loga zatím nemáme jako soubory,
-// takže se vykreslují jako monochromní čtvercové dlaždice s názvem.
+// Hierarchie i loga převzatá z projektroku.cz. Loga jsou odbarvená na bílou
+// siluetu s průhledným pozadím, aby v tmavém zápatí držela jednotný monochrom.
 export const partnerTiers: PartnerTier[] = [
-  { tier: 'Zlatý partner', partners: [{ name: 'Adresa', logo: adresaLogo }] },
+  {
+    tier: 'Zlatý partner',
+    partners: [{ name: 'Adresa', logo: adresaPartnerLogo, size: 'h-14 w-auto' }],
+  },
   {
     tier: 'Stříbrný partner',
     partners: [
-      { name: 'Developers Club' },
-      { name: 'Města budoucnosti' },
-      { name: 'Upvest' },
-      { name: 'Newton University' },
+      { name: 'Developers Club', logo: developersClubLogo, size: 'w-full h-auto' },
+      { name: 'Města budoucnosti', logo: mestaBudoucnostiLogo, size: 'w-full h-auto' },
+      { name: 'Upvest', logo: upvestLogo, size: 'w-[88%] h-auto' },
+      { name: 'Newton University', logo: newtonLogo, size: 'h-16 w-auto' },
     ],
   },
-  { tier: 'Bronzový partner', partners: [{ name: 'Ronda Invest' }] },
-  { tier: 'Mediální partner', partners: [{ name: 'Reality Idnes' }] },
+  {
+    tier: 'Bronzový partner',
+    partners: [{ name: 'Ronda Invest', logo: rondaLogo, size: 'w-[80%] h-auto' }],
+  },
+  {
+    tier: 'Mediální partner',
+    partners: [{ name: 'Reality Idnes', logo: realityIdnesLogo, size: 'w-[78%] h-auto' }],
+  },
 ]
 
 // Loga mediální skupiny do zápatí. Vyříznuto ze screenshotu zápatí adresa.cz —

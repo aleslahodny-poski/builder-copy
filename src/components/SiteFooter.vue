@@ -3,6 +3,13 @@ import { RouterLink } from 'vue-router'
 
 import BrandMark from '@/components/BrandMark.vue'
 import { contactDetails, eventTerm, groupLogos, partnerTiers } from '@/data/site'
+
+const footerLinks = [
+  { to: '/', label: 'Úvodní strana' },
+  { to: '/projekty', label: 'Nominované projekty' },
+  { to: '/pro-developery', label: 'Pro developery' },
+  { to: '/pro-partnery', label: 'Pro partnery' },
+]
 </script>
 
 <template>
@@ -30,13 +37,14 @@ import { contactDetails, eventTerm, groupLogos, partnerTiers } from '@/data/site
               <div
                 v-for="partner in tier.partners"
                 :key="partner.name"
-                class="flex aspect-square w-28 items-center justify-center rounded-soft border border-paper/15 bg-paper/5 p-3 text-center transition-colors duration-300 hover:border-paper/40"
+                class="flex aspect-square w-36 items-center justify-center rounded-soft border border-paper/15 bg-paper/5 p-5 text-center transition-colors duration-300 hover:border-paper/40"
               >
                 <img
                   v-if="partner.logo"
                   :src="partner.logo"
                   :alt="partner.name"
-                  class="max-h-8 w-auto opacity-80"
+                  class="max-h-full max-w-full object-contain opacity-80 transition-opacity duration-300 hover:opacity-100"
+                  :class="partner.size"
                 />
                 <span v-else class="text-small font-medium leading-tight text-paper/80">
                   {{ partner.name }}
@@ -47,8 +55,10 @@ import { contactDetails, eventTerm, groupLogos, partnerTiers } from '@/data/site
         </div>
       </div>
 
-      <!-- Termín akce a kontakt, oddělené -->
-      <div class="grid gap-10 border-t border-paper/15 py-16 md:grid-cols-2 md:gap-16">
+      <!-- Termín akce, kontakt a rozcestník — sloupce vedle sebe jako v referenci -->
+      <div
+        class="grid gap-10 border-t border-paper/15 py-16 md:grid-cols-2 md:gap-16 lg:grid-cols-[1.3fr_1fr_1fr]"
+      >
         <div v-reveal>
           <p class="text-label uppercase tracking-[0.3em] text-paper/60 font-bold">
             {{ eventTerm.label }}
@@ -58,7 +68,7 @@ import { contactDetails, eventTerm, groupLogos, partnerTiers } from '@/data/site
           <p class="mt-4 max-w-md text-small leading-7 text-paper/70">{{ eventTerm.note }}</p>
         </div>
 
-        <div v-reveal="100" class="md:border-l md:border-paper/15 md:pl-16">
+        <div v-reveal="100" class="md:border-l md:border-paper/15 md:pl-16 lg:pl-12">
           <p class="text-label uppercase tracking-[0.3em] text-paper/60 font-bold">Kontakt</p>
           <div class="mt-5 space-y-2 text-small leading-7 text-paper/80">
             <p class="text-lead font-medium text-paper">{{ contactDetails.person }}</p>
@@ -84,6 +94,20 @@ import { contactDetails, eventTerm, groupLogos, partnerTiers } from '@/data/site
             </div>
           </div>
         </div>
+
+        <nav
+          v-reveal="200"
+          class="md:col-span-2 md:border-t md:border-paper/15 md:pt-10 lg:col-span-1 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0"
+        >
+          <p class="text-label uppercase tracking-[0.3em] text-paper/60 font-bold">Soutěž</p>
+          <ul class="mt-5 space-y-3 text-small leading-7 text-paper/80">
+            <li v-for="link in footerLinks" :key="link.to">
+              <RouterLink :to="link.to" class="transition-colors hover:text-accent">
+                {{ link.label }}
+              </RouterLink>
+            </li>
+          </ul>
+        </nav>
       </div>
 
       <!-- Loga mediální skupiny, vpravo, plus značka soutěže -->
@@ -123,17 +147,6 @@ import { contactDetails, eventTerm, groupLogos, partnerTiers } from '@/data/site
         class="mx-auto flex max-w-[1600px] flex-col items-center justify-between gap-4 px-5 py-6 text-label text-paper/60 md:flex-row md:px-8 lg:px-10"
       >
         <p>Realitní projekt roku&nbsp;|&nbsp;©&nbsp;2026</p>
-        <div class="flex flex-wrap items-center justify-center gap-6">
-          <RouterLink to="/projekty" class="transition-colors hover:text-paper">
-            Nominované projekty
-          </RouterLink>
-          <RouterLink to="/pro-developery" class="transition-colors hover:text-paper">
-            Pro developery
-          </RouterLink>
-          <RouterLink to="/pro-partnery" class="transition-colors hover:text-paper">
-            Pro partnery
-          </RouterLink>
-        </div>
         <a
           href="https://www.poski.com/"
           target="_blank"

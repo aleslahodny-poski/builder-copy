@@ -323,12 +323,6 @@ import heroStill from '@/assets/hero-still.jpg'
               {{ chair.role }}
             </p>
             <p class="mt-4 text-small leading-6 text-ink/70">{{ chair.bio }}</p>
-            <p
-              v-if="chair.placeholder"
-              class="mt-4 inline-block rounded-full bg-muted px-3 py-1 text-label font-bold uppercase tracking-[0.16em] text-ink/70"
-            >
-              Doplní klient
-            </p>
           </div>
         </article>
       </div>
