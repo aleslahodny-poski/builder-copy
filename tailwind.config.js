@@ -30,7 +30,7 @@ export default {
         sans: ['Gellix', 'Jost', 'sans-serif'],
       },
       fontSize: {
-        // Šest stupňů podle manuálu — "maximálně pár úrovní velikostí textů".
+        // Sedm stupňů podle manuálu — "maximálně pár úrovní velikostí textů".
         // Bez letterSpacing — komponenty si tracking řídí vlastními třídami
         // a zapečené hodnoty by se s nimi praly v kaskádě.
         display: ['clamp(2.75rem, 6vw, 5.75rem)', { lineHeight: '1' }],

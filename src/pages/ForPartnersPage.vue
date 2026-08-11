@@ -3,15 +3,33 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <main class="min-h-screen bg-canvas pt-[72px]">
-    <!-- HEADER: The "Horizon" Style -->
-    <header class="relative flex h-[300px] w-full items-center justify-center overflow-hidden border-b border-line bg-ink perspective-[1000px]">
-      <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=2000&q=80" alt="Architecture Horizon" class="absolute inset-0 h-full w-full object-cover opacity-30 mix-blend-luminosity" />
-      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-transparent" />
-      <h1 v-reveal class="relative z-10 text-display uppercase tracking-[0.2em] text-paper font-bold drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)] transition-transform duration-[2000ms] hover:scale-105" style="transform: translateZ(20px);">
-        Pro partnery
-      </h1>
-    </header>
+  <main class="min-h-screen -mt-24 bg-canvas pt-24 md:-mt-28 md:pt-28">
+    <!-- Hero bez fotky — klient chce web postavený na typografii, ne na obrázcích. -->
+    <section class="mx-auto max-w-[1600px] px-5 pb-16 pt-6 md:px-8 lg:px-10">
+      <div class="relative w-full overflow-hidden rounded-shell border border-line bg-ink p-8 md:p-12 lg:p-16">
+        <nav
+          v-reveal="50"
+          class="flex items-center gap-2 text-label font-bold uppercase tracking-[0.2em] text-paper/60"
+        >
+          <RouterLink to="/" class="transition-colors hover:text-paper">Domů</RouterLink>
+          <span class="text-paper/45">/</span>
+          <span class="text-paper">Pro partnery</span>
+        </nav>
+
+        <div class="relative z-10 mt-10 max-w-4xl">
+          <p v-reveal class="text-label uppercase tracking-[0.32em] text-paper/60 font-bold">
+            Spolupráce se soutěží
+          </p>
+          <h1 v-reveal="100" class="mt-4 text-display font-medium tracking-[-0.04em] text-paper">
+            Pro partnery
+          </h1>
+          <p v-reveal="200" class="mt-5 max-w-2xl text-body leading-relaxed text-paper/70 md:text-lead">
+            Spojte svou značku se soutěží, kterou sledují developeři, odborná veřejnost i lidé
+            hledající nové bydlení — od mediálního až po generální partnerství.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!-- SECTION 1: VALUE PROPOSITION (Strategic Gateway) -->
     <section class="border-b border-line bg-paper px-5 py-24 md:px-8 lg:px-10 lg:py-32">
@@ -34,49 +52,53 @@ import { RouterLink } from 'vue-router'
           <h2 class="text-h1 font-bold tracking-tight text-paper">Nabízíme aktivní zapojení v podobě:</h2>
         </div>
 
+        <!--
+          Úrovně partnerství se odlišují jasem v rámci palety, ne zlatou/stříbrnou.
+          Sestupně: accent (nejvyšší) → paper → line → secondary.
+        -->
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <!-- Monolith 1: Generalni -->
-          <article v-reveal="100" class="group relative flex min-h-[450px] flex-col justify-end overflow-hidden border border-paper/10 bg-paper/[0.02] p-8 transition-colors duration-700 hover:border-[#D4AF37]/50 hover:bg-[#D4AF37]/10">
+          <article v-reveal="100" class="group relative flex min-h-[450px] flex-col justify-end overflow-hidden border border-paper/10 bg-paper/[0.02] p-8 transition-colors duration-700 hover:border-accent/50 hover:bg-accent/10">
             <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent z-10 transition-opacity duration-500 group-hover:opacity-70"></div>
             <div class="relative z-20">
-              <span class="mb-4 inline-block text-label font-bold uppercase tracking-widest text-[#D4AF37]">Generální</span>
+              <span class="mb-4 inline-block text-label font-bold uppercase tracking-widest text-accent">Generální</span>
               <h3 class="mb-3 text-h2 font-bold uppercase tracking-widest text-paper">Partnerství</h3>
               <p class="text-small leading-relaxed text-paper/70 transition-colors group-hover:text-paper">Exkluzivní zastoupení, plná asociace se značkou přes všechny mediální výstupy a maximální viditelnost.</p>
             </div>
-            <div class="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-[#D4AF37]/30 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
+            <div class="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-accent/30 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
           </article>
           
           <!-- Monolith 2: Zlatý -->
-          <article v-reveal="200" class="group relative flex min-h-[450px] flex-col justify-end overflow-hidden border border-paper/10 bg-paper/[0.02] p-8 transition-colors duration-700 hover:border-[#FFD700]/50 hover:bg-[#FFD700]/10">
+          <article v-reveal="200" class="group relative flex min-h-[450px] flex-col justify-end overflow-hidden border border-paper/10 bg-paper/[0.02] p-8 transition-colors duration-700 hover:border-paper/50 hover:bg-paper/10">
             <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent z-10 transition-opacity duration-500 group-hover:opacity-70"></div>
             <div class="relative z-20">
-              <span class="mb-4 inline-block text-label font-bold uppercase tracking-widest text-[#FFD700]">Zlaté</span>
+              <span class="mb-4 inline-block text-label font-bold uppercase tracking-widest text-paper">Zlaté</span>
               <h3 class="mb-3 text-h2 font-bold uppercase tracking-widest text-paper">Partnerství</h3>
               <p class="text-small leading-relaxed text-paper/70 transition-colors group-hover:text-paper">Silná přítomnost na hlavních formátech, masivní vizibilita u odborné i laické veřejnosti.</p>
             </div>
-            <div class="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-[#FFD700]/30 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
+            <div class="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-paper/30 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
           </article>
 
           <!-- Monolith 3: Stříbrný -->
-          <article v-reveal="300" class="group relative flex min-h-[450px] flex-col justify-end overflow-hidden border border-paper/10 bg-paper/[0.02] p-8 transition-colors duration-700 hover:border-[#C0C0C0]/50 hover:bg-[#C0C0C0]/10">
+          <article v-reveal="300" class="group relative flex min-h-[450px] flex-col justify-end overflow-hidden border border-paper/10 bg-paper/[0.02] p-8 transition-colors duration-700 hover:border-line/50 hover:bg-line/10">
              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent z-10 transition-opacity duration-500 group-hover:opacity-70"></div>
             <div class="relative z-20">
-              <span class="mb-4 inline-block text-label font-bold uppercase tracking-widest text-[#C0C0C0]">Stříbrné</span>
+              <span class="mb-4 inline-block text-label font-bold uppercase tracking-widest text-line">Stříbrné</span>
               <h3 class="mb-3 text-h2 font-bold uppercase tracking-widest text-paper">Partnerství</h3>
               <p class="text-small leading-relaxed text-paper/70 transition-colors group-hover:text-paper">Základní partnerské pokrytí v tiskových i digitálních celostátních kanálech soutěže.</p>
             </div>
-             <div class="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-[#C0C0C0]/30 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
+             <div class="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-line/30 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
           </article>
 
           <!-- Monolith 4: Mediální -->
-          <article v-reveal="400" class="group relative flex min-h-[450px] flex-col justify-end overflow-hidden border border-paper/10 bg-paper/[0.02] p-8 transition-colors duration-700 hover:border-[#4A90E2]/50 hover:bg-[#4A90E2]/10">
+          <article v-reveal="400" class="group relative flex min-h-[450px] flex-col justify-end overflow-hidden border border-paper/10 bg-paper/[0.02] p-8 transition-colors duration-700 hover:border-secondary/50 hover:bg-secondary/10">
              <div class="absolute inset-0 bg-gradient-to-t from-ink/90 via-transparent to-transparent z-10 transition-opacity duration-500 group-hover:opacity-70"></div>
             <div class="relative z-20">
-              <span class="mb-4 inline-block text-label font-bold uppercase tracking-widest text-[#4A90E2]">Mediální</span>
+              <span class="mb-4 inline-block text-label font-bold uppercase tracking-widest text-secondary">Mediální</span>
               <h3 class="mb-3 text-h2 font-bold uppercase tracking-widest text-paper">Partnerství</h3>
               <p class="text-small leading-relaxed text-paper/70 transition-colors group-hover:text-paper">Vzájemná podpora prémiového obsahu, PR synergii a budování masového dosahu.</p>
             </div>
-            <div class="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-[#4A90E2]/30 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
+            <div class="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-secondary/30 to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
           </article>
         </div>
       </div>

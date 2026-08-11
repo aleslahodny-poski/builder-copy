@@ -3,15 +3,33 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <main class="min-h-screen bg-canvas pt-[72px]">
-    <!-- HEADER: The "Horizon" Style -->
-    <header class="relative flex h-[300px] w-full items-center justify-center overflow-hidden border-b border-line bg-ink perspective-[1000px]">
-      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80" alt="Architecture Horizon" class="absolute inset-0 h-full w-full object-cover opacity-30 mix-blend-luminosity" />
-      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/80 to-transparent" />
-      <h1 v-reveal class="relative z-10 text-display uppercase tracking-[0.2em] text-paper font-bold drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)] transition-transform duration-[2000ms] hover:scale-105" style="transform: translateZ(20px);">
-        Pro developery
-      </h1>
-    </header>
+  <main class="min-h-screen -mt-24 bg-canvas pt-24 md:-mt-28 md:pt-28">
+    <!-- Hero bez fotky — klient chce web postavený na typografii, ne na obrázcích. -->
+    <section class="mx-auto max-w-[1600px] px-5 pt-6 md:px-8 lg:px-10">
+      <div class="relative w-full overflow-hidden rounded-shell border border-line bg-ink p-8 md:p-12 lg:p-16">
+        <nav
+          v-reveal="50"
+          class="flex items-center gap-2 text-label font-bold uppercase tracking-[0.2em] text-paper/60"
+        >
+          <RouterLink to="/" class="transition-colors hover:text-paper">Domů</RouterLink>
+          <span class="text-paper/45">/</span>
+          <span class="text-paper">Pro developery</span>
+        </nav>
+
+        <div class="relative z-10 mt-10 max-w-4xl">
+          <p v-reveal class="text-label uppercase tracking-[0.32em] text-paper/60 font-bold">
+            Přihláška do soutěže
+          </p>
+          <h1 v-reveal="100" class="mt-4 text-display font-medium tracking-[-0.04em] text-paper">
+            Pro developery
+          </h1>
+          <p v-reveal="200" class="mt-5 max-w-2xl text-body leading-relaxed text-paper/70 md:text-lead">
+            Postavte svůj projekt vedle konkurence, nechte jej ohodnotit odbornou porotou,
+            architekty i veřejností a získejte mediální podporu v celé České republice.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <!-- SECTION 1: PROČ NOMINOVAT (Validation Deck) -->
     <section class="mx-auto max-w-[1600px] px-5 py-24 md:px-8 lg:px-10 lg:py-32">
