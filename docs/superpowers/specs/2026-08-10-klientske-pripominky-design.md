@@ -241,12 +241,20 @@ Recorded after implementation so the spec matches what actually shipped.
    `text-secondary` for eyebrow labels — the same "too many levels" problem expressed in
    colour rather than size.
 
-4. **Two Unsplash photos remain.** Only the Projects page was in scope. `ForDevelopersPage`
-   and `ForPartnersPage` still hot-link hero photos from `images.unsplash.com`. Removing
-   them means redesigning both heroes, which is beyond this round — flagged to the user
-   instead. Note the hot-linking is a live dependency on a third-party CDN.
+4. **All decorative Unsplash photos removed.** Originally only the Projects page was in
+   scope; `ForDevelopersPage` and `ForPartnersPage` were flagged and then done in a
+   follow-up. Both heroes now use the same typographic card as the Projects page —
+   breadcrumb, eyebrow, `display` heading, lead paragraph — which also removes a live
+   dependency on a third-party CDN. The project photographs in `site.ts` still point at
+   Unsplash; those are content placeholders awaiting real project imagery, not decoration.
 
-5. **Partner logos are text tiles.** No partner logo files exist; only `adresa` was
+5. **Partnership tiers recoloured.** Not in the original spec. The four tier cards on
+   `ForPartnersPage` used literal gold, silver and blue hex values (`#D4AF37`, `#FFD700`,
+   `#C0C0C0`, `#4A90E2`) left over from Builder.io, which contradicted the full rebrand into
+   the manual's palette. Hierarchy is now expressed by luminance inside the palette:
+   `accent` (generální) → `paper` (zlaté) → `line` (stříbrné) → `secondary` (mediální).
+
+6. **Partner logos are text tiles.** No partner logo files exist; only `adresa` was
    recoverable (from the footer screenshot). The other partners render as monochrome square
    tiles with the name set in type, which satisfies "monochrom / základní formát čtverec"
    and is trivially swapped for real logos later.
